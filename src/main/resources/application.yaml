@@ -1,6 +1,6 @@
 spring:
   application:
-    name: notification-service   # must match the filename in config-repo
+    name: notification-ws-gateway   # must match the filename in config-repo
   config:
     import: optional:configserver:http://localhost:8888
 
