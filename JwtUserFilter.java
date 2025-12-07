@@ -37,7 +37,8 @@ public class JwtUserFilter extends AbstractGatewayFilterFactory<JwtUserFilter.Co
                             .getBody();
 
                     // Adjust claim key according to your JWT (e.g. "userId" or "sub")
-                    Object userId = claims.get("userIds");
+
+                    Object userId = claims.get("userId");
                     if (userId == null) {
                         userId = claims.getSubject(); // fallback
                     }
