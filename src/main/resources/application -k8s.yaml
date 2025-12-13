@@ -1,9 +1,39 @@
-spring:
-  application:
-    name: notification-ws-gateway   # must match the filename in config-repo
-  config:
-    import: optional:configserver:http://localhost:8888
+# application-kubernetes.yaml
 
-# Local fallback if config-server unreachable
+spring:
+  # 1. Application Name (Used to look up ConfigMap/Secret names)
+  application:
+    name: notification-ws-gateway
+
+  # 2. Configuration Source: Spring Cloud Kubernetes
+  config:
+    # Use the `kubernetes` profile to activate Spring Cloud Kubernetes auto-configuration
+    activate.on-profile: kubernetes
+    
+    # Optional: If you want to keep Config Server as a fallback for non-K8s environments
+    # import: optional:configserver:http://localhost:8888
+    # NOTE: I recommend removing the above import once fully migrated to Kubernetes
+
+  # 3. Kubernetes-Specific Configuration
+  kubernetes:
+    # Enables the ConfigMap property source
+    config:
+      enabled: true
+      # Names of the ConfigMaps to load (besides the default application name)
+      # Defaults to: <application-name> and bootstrap (e.g., notification-ws-gateway and bootstrap)
+      sources:
+        - name: common-config # Example: a ConfigMap for properties shared across services
+        - name: notification-ws-gateway
+        
+    # Enables the Secrets property source
+    secrets:
+      enabled: true
+      # Names of the Secrets to load (besides the default application name)
+      # Defaults to: <application-name> and bootstrap
+      sources:
+        - name: notification-ws-secrets # Example: a Secret for sensitive data
+        - name: common-secrets
+        
+# Local fallback if Kubernetes discovery fails (or for local testing)
 server:
   port: 8082
