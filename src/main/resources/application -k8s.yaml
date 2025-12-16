@@ -34,4 +34,4 @@ eureka:
     # Use the application name as the hostname
     hostname: ${spring.application.name} 
     # Prefer IP address to avoid DNS issues
-    prefer-ip-address: true
+    prefer-ip-address: false
