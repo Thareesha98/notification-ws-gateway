@@ -1,3 +1,4 @@
+
 server:
   # Local fallback port (only used if config is not loaded)
   port: 8082
@@ -35,3 +36,4 @@ eureka:
     hostname: ${spring.application.name} 
     # Prefer IP address to avoid DNS issues
     prefer-ip-address: false
+
