@@ -19,7 +19,7 @@ spring:
   # Service Discovery Setup
   cloud:
     discovery:
-      enabled: false
+      enabled: true
 
 # Eureka Client Configuration
 eureka:
