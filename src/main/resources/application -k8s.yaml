@@ -21,7 +21,7 @@ spring:
     discovery:
       enabled: true
 
-# Eureka Client Configuration
+
 eureka:
   client:
     # URL of your Eureka Server (Service Registry)
