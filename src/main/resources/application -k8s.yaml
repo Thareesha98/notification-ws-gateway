@@ -16,7 +16,7 @@ spring:
     activate:
       on-profile: dev 
   
-  # Service Discovery Setup
+
   cloud:
     discovery:
       enabled: true
@@ -24,7 +24,7 @@ spring:
 
 eureka:
   client:
-    # URL of your Eureka Server (Service Registry)
+
     service-url:
       defaultZone: http://localhost:8761/eureka/
     # The WS Gateway must register itself
