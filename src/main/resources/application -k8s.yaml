@@ -12,7 +12,7 @@ spring:
   config:
     # URL of your Config Server
     import: optional:configserver:http://localhost:8888
-    # Use the 'dev' profile, which will load 'notification-ws-gateway-dev.yml'
+
     activate:
       on-profile: dev 
   
