@@ -17,9 +17,7 @@ spring:
       on-profile: dev 
   
 
-  cloud:
-    discovery:
-      enabled: false
+  
 
 
 eureka:
