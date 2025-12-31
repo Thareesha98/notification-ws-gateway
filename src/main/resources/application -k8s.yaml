@@ -19,7 +19,7 @@ spring:
 
   cloud:
     discovery:
-      enabled: true
+      enabled: false
 
 
 eureka:
@@ -29,7 +29,7 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
     # The WS Gateway must register itself
     register-with-eureka: true 
-    # The WS Gateway needs to fetch the registry to find other
+
     fetch-registry: true 
   instance:
     # Use the application name as the hostname
