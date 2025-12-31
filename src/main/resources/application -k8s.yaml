@@ -12,24 +12,24 @@ spring:
   config:
     # URL of your Config Server
     import: optional:configserver:http://localhost:8888
-    # Use the 'dev' profile, which will load 'notification-ws-gateway-dev.yml'
+
     activate:
       on-profile: dev 
   
-  # Service Discovery Setup
+
   cloud:
     discovery:
-      enabled: true
+      enabled: false
 
 
 eureka:
   client:
-    # URL of your Eureka Server (Service Registry)
+
     service-url:
       defaultZone: http://localhost:8761/eureka/
     # The WS Gateway must register itself
     register-with-eureka: true 
-    # The WS Gateway needs to fetch the registry to find other services if required
+
     fetch-registry: true 
   instance:
     # Use the application name as the hostname
