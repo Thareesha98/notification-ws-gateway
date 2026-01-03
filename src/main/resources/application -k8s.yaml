@@ -28,7 +28,7 @@ eureka:
     # The WS Gateway must register itself
     register-with-eureka: true 
 
-    fetch-registry: true 
+    fetch-registry: false 
   instance:
     # Use the application name as the hostname
     hostname: ${spring.application.name} 
